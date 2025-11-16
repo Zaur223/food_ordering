@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "Sentry": {
+      "url": "https://mcp.sentry.dev/mcp/abe94261f0aa/jsm_reactnative_food-ordering",
+      "type": "http"
+    }
+  }
+}
