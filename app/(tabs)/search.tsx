@@ -60,7 +60,6 @@ const Search = () => {
                 )}
                 ListEmptyComponent={() => !loading && <Text>No results</Text>}
             />
-            <Button title='Seed' onPress={() => seed().catch((error) => console.log('failed to seed the database', error))} />
         </SafeAreaView>
     )
 }
