@@ -22,8 +22,11 @@ import user from "@/assets/icons/user.png";
 import avatar from "@/assets/images/avatar.png";
 import avocado from "@/assets/images/avocado.png";
 import bacon from "@/assets/images/bacon.png";
+import bowl1 from "@/assets/images/bowl1.png";
+import burger1 from "@/assets/images/burger1.png";
 import burgerOne from "@/assets/images/burger-one.png";
 import burgerTwo from "@/assets/images/burger-two.png";
+import burritos1 from "@/assets/images/burritos1.png";
 import buritto from "@/assets/images/buritto.png";
 import cheese from "@/assets/images/cheese.png";
 import coleslaw from "@/assets/images/coleslaw.png";
@@ -36,10 +39,13 @@ import mozarellaSticks from "@/assets/images/mozarella-sticks.png";
 import mushrooms from "@/assets/images/mushrooms.png";
 import onionRings from "@/assets/images/onion-rings.png";
 import onions from "@/assets/images/onions.png";
+import pizza1 from "@/assets/images/pizza1.png";
 import pizzaOne from "@/assets/images/pizza-one.png";
 import salad from "@/assets/images/salad.png";
+import sandwich1 from "@/assets/images/sandwich1.png";
 import success from "@/assets/images/success.png";
 import tomatoes from "@/assets/images/tomatoes.png";
+import wrap1 from "@/assets/images/wrap1.png";
 
 export const CATEGORIES = [
     {
@@ -161,8 +167,11 @@ export const images = {
     avatar,
     avocado,
     bacon,
+    bowl1,
+    burger1,
     burgerOne,
     burgerTwo,
+    burritos1,
     buritto,
     cheese,
     coleslaw,
@@ -175,10 +184,13 @@ export const images = {
     mushrooms,
     onionRings,
     onions,
+    pizza1,
     pizzaOne,
     salad,
+    sandwich1,
     success,
     tomatoes,
+    wrap1,
     arrowBack,
     arrowDown,
     arrowRight,
@@ -199,4 +211,13 @@ export const images = {
     star,
     trash,
     user,
+};
+
+export const categoryImageMap: Record<string, any> = {
+    'burger': burger1,
+    'pizza': pizza1,
+    'burrito': burritos1,
+    'sandwich': sandwich1,
+    'wrap': wrap1,
+    'salad': bowl1,
 };
