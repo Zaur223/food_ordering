@@ -48,9 +48,26 @@ export const createUser = async ({ email, password, name }: CreateUserParams) =>
 
 export const signIn = async ({ email, password }: SignInParams) => {
     try {
-        const session = await account.createEmailPasswordSession(email, password);
-    } catch (e) {
-        throw new Error(e as string);
+        return await account.createEmailPasswordSession(email, password);
+    } catch (e: any) {
+        const msg = (e && (e.message || String(e))) || '';
+
+        // If Appwrite refuses because a session is already active, try deleting current session and retry once
+        if (/creation of a session is prohibited when a session is active|session is active/i.test(msg)) {
+            try {
+                await account.deleteSession('current');
+            } catch (_) {
+                // ignore delete errors
+            }
+
+            try {
+                return await account.createEmailPasswordSession(email, password);
+            } catch (e2: any) {
+                throw new Error(e2?.message || String(e2));
+            }
+        }
+
+        throw new Error(msg || 'Sign in failed');
     }
 }
 
